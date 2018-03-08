@@ -2,15 +2,12 @@ const assert = require("assert");
 
 const diagnalDifference = matrix => {
     var lToRDiagonal = 0;
-    for(let i = 0; i < matrix.length; i++){
-        lToRDiagonal += matrix[i][i];
-    }
     var rToLDiagonal = 0;
     for(let i = 0; i < matrix.length; i++){
+        lToRDiagonal += matrix[i][i];
         rToLDiagonal += matrix[i][matrix.length - (i + 1)];
     }
     return Math.abs(lToRDiagonal - rToLDiagonal);
-
 };
 
 const threeByThree = [
